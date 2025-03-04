@@ -1,15 +1,17 @@
-import './App.css'
-import Download from './Component/Download/Download'
-import Upload from './Component/Upload/Upload'
+import { useState } from "react";
+import "./App.css";
+import Download from "./Component/Download/Download";
+import Upload from "./Component/Upload/Upload";
 
 function App() {
+  const [refreshTrigger, setRefreshTrigger] = useState(false);
 
   return (
     <div>
-      <Download />
-      <Upload />
+      <Download refreshTrigger={refreshTrigger} />
+      <Upload setRefreshTrigger={setRefreshTrigger} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
